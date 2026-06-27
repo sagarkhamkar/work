@@ -212,9 +212,16 @@ navLinks.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', () => navLinks.classList.remove('open'));
 });
 
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 window.addEventListener('scroll', () => {
-  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 20);
-});
+  const scrollY = window.scrollY;
+  document.getElementById('header').classList.toggle('scrolled', scrollY > 20);
+
+  if (!prefersReducedMotion) {
+    document.documentElement.style.setProperty('--hero-y', scrollY.toFixed(0));
+  }
+}, { passive: true });
 
 document.getElementById('contactForm').addEventListener('submit', (e) => {
   e.preventDefault();
@@ -230,9 +237,12 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
 });
 
 const revealElements = document.querySelectorAll(
-  '.feature-card, .product-card, .about-layout, .exchange-card, .contact-grid, .section-header, .product-gallery'
+  '.feature-card, .product-card, .about-layout, .exchange-card, .contact-grid, .section-header, .catalog-gallery'
 );
-revealElements.forEach((el) => el.classList.add('reveal'));
+revealElements.forEach((el, index) => {
+  el.classList.add('reveal');
+  el.style.setProperty('--reveal-index', index % 6);
+});
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -246,3 +256,29 @@ const observer = new IntersectionObserver(
 );
 
 revealElements.forEach((el) => observer.observe(el));
+
+if (!prefersReducedMotion) {
+  document.querySelectorAll('.feature-card, .product-card, .contact-form').forEach((card) => {
+    card.addEventListener('pointermove', (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      const px = x / rect.width;
+      const py = y / rect.height;
+      const tiltX = (0.5 - py) * 5;
+      const tiltY = (px - 0.5) * 5;
+
+      card.style.setProperty('--mx', `${px * 100}%`);
+      card.style.setProperty('--my', `${py * 100}%`);
+      card.style.setProperty('--tilt-x', `${tiltX.toFixed(2)}deg`);
+      card.style.setProperty('--tilt-y', `${tiltY.toFixed(2)}deg`);
+    });
+
+    card.addEventListener('pointerleave', () => {
+      card.style.removeProperty('--tilt-x');
+      card.style.removeProperty('--tilt-y');
+      card.style.removeProperty('--mx');
+      card.style.removeProperty('--my');
+    });
+  });
+}
