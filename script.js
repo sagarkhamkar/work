@@ -1,4 +1,4 @@
-const WHATSAPP = '919922556146';
+const WHATSAPP = '919921464280';
 
 const translations = {
   mr: {
