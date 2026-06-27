@@ -1,10 +1,4 @@
-// Contact details — not in HTML source to reduce casual scraping
-const CONTACT = {
-  phone1: { label: '+91 99225 56146', href: 'tel:+919922556146' },
-  phone2: { label: '+91 88886 09664', href: 'tel:+918888609664' },
-  whatsapp: { label: 'WhatsApp', href: 'https://wa.me/919922556146' },
-  email: { label: 'dineshenterprises170@gmail.com', href: 'mailto:dineshenterprises170@gmail.com' },
-};
+const WHATSAPP = '919922556146';
 
 const translations = {
   mr: {
@@ -78,9 +72,6 @@ const translations = {
     contact_phone: 'मोबाईल',
     contact_phone2: 'मोबाईल २',
     contact_wa: 'WhatsApp वर संदेश पाठवा',
-    contact_masked: 'नंबर पाहण्यासाठी टॅप करा',
-    contact_wa_masked: 'WhatsApp साठी टॅप करा',
-    contact_email_masked: 'ईमेल पाहण्यासाठी टॅप करा',
     contact_email: 'ईमेल',
     contact_location: 'कार्यालय',
     contact_address: 'माळेगाव बु., ता. बारामती, जि. पुणे — ४१३११५',
@@ -166,9 +157,6 @@ const translations = {
     contact_phone: 'Mobile',
     contact_phone2: 'Mobile 2',
     contact_wa: 'Send a message on WhatsApp',
-    contact_masked: 'Tap to reveal number',
-    contact_wa_masked: 'Tap for WhatsApp',
-    contact_email_masked: 'Tap to reveal email',
     contact_email: 'Email',
     contact_location: 'Office',
     contact_address: 'Malegaon B.K., Tal. Baramati, Dist. Pune — 413115',
@@ -236,39 +224,9 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
   const text = encodeURIComponent(
     `नाव/Name: ${name}\nफोन/Phone: ${phone}\nसंदेश/Message: ${message}`
   );
-  window.open(`${CONTACT.whatsapp.href}?text=${text}`, '_blank');
+  window.open(`https://wa.me/${WHATSAPP}?text=${text}`, '_blank');
   alert(translations[currentLang].form_success);
   e.target.reset();
-});
-
-function revealContact(button) {
-  const key = button.dataset.contact;
-  const info = CONTACT[key];
-  if (!info) return;
-
-  if (button.dataset.revealed !== 'true') {
-    button.dataset.revealed = 'true';
-    const mask = button.querySelector('.contact-mask');
-    if (mask) {
-      mask.textContent = info.label;
-      mask.classList.add('contact-revealed');
-    }
-    return;
-  }
-
-  if (info.href.startsWith('tel:') || info.href.startsWith('mailto:')) {
-    window.location.href = info.href;
-  } else {
-    window.open(info.href, '_blank', 'noopener');
-  }
-}
-
-document.querySelectorAll('.contact-protected').forEach((button) => {
-  button.addEventListener('click', () => revealContact(button));
-});
-
-document.getElementById('whatsappFloat').addEventListener('click', () => {
-  window.open(CONTACT.whatsapp.href, '_blank', 'noopener');
 });
 
 const revealElements = document.querySelectorAll(
