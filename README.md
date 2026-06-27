@@ -1,6 +1,6 @@
 # Dinesh Thibak — Website
 
-Static website for **Dinesh Thibak** (Dinesh Enterprises), drip irrigation systems — Baramati, Pune.
+Static website for **Dinesh Thibak** / **Dinesh Drip Irrigation** (Dinesh Enterprises), drip irrigation systems — Baramati, Pune.
 
 ## Live site
 
