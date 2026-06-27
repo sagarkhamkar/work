@@ -337,7 +337,7 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
 });
 
 const revealElements = document.querySelectorAll(
-  '.feature-card, .product-card, .about-layout, .system-layout, .component-card, .crop-card, .process-step, .exchange-card, .contact-grid, .section-header, .drip-compare, .compare-card'
+  '.feature-card, .product-card, .about-layout, .system-layout, .component-card, .crop-card, .process-step, .exchange-card, .contact-grid, .section-header, .drip-showcase, .showcase-item'
 );
 revealElements.forEach((el, index) => {
   el.classList.add('reveal');
