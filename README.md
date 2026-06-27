@@ -4,9 +4,9 @@ Static website for **Dinesh Thibak** (Dinesh Enterprises), drip irrigation syste
 
 ## Live site
 
-After GitHub Pages is enabled, the site will be available at:
-
 **https://sagarkhamkar.github.io/work/**
+
+Drip irrigation systems, Hydrogoal & Flat Drip pipes, installation and support — Baramati, Pune.
 
 ## Local preview
 
