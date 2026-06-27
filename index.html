@@ -42,7 +42,23 @@
   <main>
     <section class="hero" id="home">
       <div class="hero-bg">
-        <img src="assets/dinesh-drip-field-hero.png" alt="Dinesh Thibak drip irrigation system in a farm field" class="hero-banner-img">
+        <div class="hero-scene" aria-hidden="true">
+          <span class="scene-sun"></span>
+          <svg class="scene-hills" viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path class="hill hill-back" d="M0,210 C240,150 480,200 720,180 C960,160 1200,205 1440,165 L1440,320 L0,320 Z"/>
+            <path class="hill hill-front" d="M0,255 C300,205 560,250 840,228 C1100,210 1280,252 1440,232 L1440,320 L0,320 Z"/>
+          </svg>
+          <div class="scene-field">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="scene-drips">
+            <span style="--d:0s;--x:18%"></span>
+            <span style="--d:0.8s;--x:34%"></span>
+            <span style="--d:1.5s;--x:52%"></span>
+            <span style="--d:0.4s;--x:68%"></span>
+            <span style="--d:1.1s;--x:84%"></span>
+          </div>
+        </div>
         <div class="hero-overlay"></div>
         <div class="hero-motion" aria-hidden="true">
           <span class="hero-orb hero-orb-one"></span>
@@ -56,10 +72,13 @@
         <h1 class="hero-title" data-i18n="hero_title">दिनेश ठिबक</h1>
         <p class="hero-subtitle" data-i18n="hero_subtitle">थेंब थेंब पाण्यानं.... पिक आलं जोमानं...</p>
         <p class="hero-company" data-i18n="hero_company">Dinesh Enterprises — Dinesh Drip Irrigation System</p>
-        <a href="#exchange" class="btn btn-primary btn-lg hero-cta">
-          <span data-i18n="hero_cta">जुनी नळी द्या आणि नवीन नळी घ्या</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <div class="hero-cta-group">
+          <a href="#contact" class="btn btn-primary btn-lg hero-cta">
+            <span data-i18n="hero_cta">मोफत सल्ला व अंदाज मागवा</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#products" class="btn btn-ghost btn-lg" data-i18n="hero_cta2">उत्पादने पहा</a>
+        </div>
         <div class="hero-stats">
           <div class="stat">
             <span class="stat-num">2–8L</span>
@@ -87,8 +106,8 @@
         <div class="about-layout">
           <div class="about-content">
             <span class="section-tag" data-i18n="about_tag">Dinesh Enterprises</span>
-            <h2 data-i18n="about_title">दिनेश ड्रिप इरिगेशन सिस्टम</h2>
-            <p data-i18n="about_desc">माळेगाव बु., बारामती (जि. पुणे) येथे स्थित — शेतकऱ्यांसाठी गुणवत्तापूर्ण ड्रिप सिंचन उपकरणे आणि सेवा. आधुनिक तंत्रज्ञान, उच्च दर्जाची साहित्य आणि विश्वासार्ह सेवा.</p>
+            <h2 data-i18n="about_title">दिनेश ठिबक सिंचन प्रणाली</h2>
+            <p data-i18n="about_desc">माळेगाव बु., बारामती (जि. पुणे) येथे स्थित — शेतकऱ्यांसाठी गुणवत्तापूर्ण ठिबक सिंचन उपकरणे आणि सेवा. आधुनिक तंत्रज्ञान, उच्च दर्जाची साहित्य आणि विश्वासार्ह सेवा.</p>
             <div class="about-highlights">
               <div class="about-highlight">
                 <strong data-i18n="ah1_title">उत्पादक</strong>
@@ -109,7 +128,37 @@
             </a>
           </div>
           <div class="about-visual">
-            <img src="assets/products-catalog.png" alt="Dinesh Drip product catalog" class="about-img">
+            <div class="illustration illustration-product" aria-hidden="true">
+              <svg viewBox="0 0 320 320" class="illu-svg">
+                <defs>
+                  <linearGradient id="coilGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#2b2b2b"/>
+                    <stop offset="1" stop-color="#0f0f0f"/>
+                  </linearGradient>
+                  <linearGradient id="filterGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#c62828"/>
+                    <stop offset="1" stop-color="#7a1515"/>
+                  </linearGradient>
+                </defs>
+                <ellipse cx="160" cy="280" rx="120" ry="20" fill="rgba(17,24,39,0.10)"/>
+                <g class="illu-coil">
+                  <circle cx="195" cy="180" r="78" fill="none" stroke="url(#coilGrad)" stroke-width="20"/>
+                  <circle cx="195" cy="180" r="54" fill="none" stroke="url(#coilGrad)" stroke-width="18"/>
+                  <circle cx="195" cy="180" r="32" fill="none" stroke="url(#coilGrad)" stroke-width="14"/>
+                  <circle cx="195" cy="180" r="12" fill="none" stroke="#2e7d32" stroke-width="4" stroke-dasharray="4 6" class="illu-dash"/>
+                </g>
+                <g class="illu-filter">
+                  <rect x="78" y="120" width="34" height="130" rx="17" fill="url(#filterGrad)"/>
+                  <rect x="86" y="104" width="18" height="22" rx="6" fill="#9b1c1c"/>
+                  <circle cx="95" cy="150" r="11" fill="#fff"/>
+                  <line x1="95" y1="150" x2="100" y2="144" stroke="#9b1c1c" stroke-width="2"/>
+                </g>
+                <g class="illu-drops">
+                  <circle class="drop" cx="95" cy="250" r="5" fill="#4caf50"/>
+                  <circle class="drop drop-2" cx="195" cy="262" r="5" fill="#4caf50"/>
+                </g>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
@@ -139,19 +188,9 @@
             <p data-i18n="f3_desc">पाणी, खते, कीटकनाशके, मजुरी आणि बियाणे यामध्ये मोठी बचत — पिकाचे उत्पादन वाढते.</p>
           </article>
           <article class="feature-card">
-            <div class="feature-icon">📦</div>
-            <h3 data-i18n="f4_title">विविध प्रकार</h3>
-            <p data-i18n="f4_desc">Inline, Online Lateral, Flat Drip — सर्व पिकांसाठी. सर्व आकार, ISI आणि Non-ISI उपलब्ध.</p>
-          </article>
-          <article class="feature-card">
             <div class="feature-icon">🔧</div>
             <h3 data-i18n="f5_title">फिल्टर विरहित</h3>
             <p data-i18n="f5_desc">सोपी बांधणी, कमी देखभाल — फिल्टरशिवायही उत्तम कार्यक्षमता.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon">🤝</div>
-            <h3 data-i18n="f6_title">विश्वासु सेवा</h3>
-            <p data-i18n="f6_desc">विश्वासु आणि तत्पर सेवा — शेताला भेट, योग्य सल्ला आणि बांधणी.</p>
           </article>
         </div>
       </div>
@@ -268,7 +307,7 @@
           <article class="product-card">
             <div class="product-card-header">
               <h3>Hydrogoal Drip</h3>
-              <span class="product-tag" data-i18n="pc1_tag">गोल ड्रिप नळी</span>
+              <span class="product-tag" data-i18n="pc1_tag">गोल ठिबक नळी</span>
             </div>
             <ul class="spec-list">
               <li>
@@ -290,7 +329,7 @@
           <article class="product-card product-card-featured">
             <div class="product-card-header">
               <h3>Flat Drip</h3>
-              <span class="product-tag" data-i18n="pc2_tag">फ्लॅट ड्रिप टेप</span>
+              <span class="product-tag" data-i18n="pc2_tag">फ्लॅट ठिबक टेप</span>
             </div>
             <ul class="spec-list">
               <li>
@@ -326,9 +365,39 @@
           </article>
         </div>
 
-        <div class="catalog-gallery">
-          <img src="assets/products-catalog.png" alt="Hydrogoal Drip and Flat Drip catalog" class="gallery-img">
-          <img src="assets/flyer-features.png" alt="Dinesh Thibak features flyer" class="gallery-img">
+        <div class="drip-compare">
+          <article class="compare-card">
+            <div class="compare-visual">
+              <svg viewBox="0 0 200 120" class="compare-svg" aria-hidden="true">
+                <rect x="10" y="46" width="180" height="28" rx="14" fill="#1f2937"/>
+                <rect x="10" y="46" width="180" height="28" rx="14" fill="none" stroke="#374151" stroke-width="2"/>
+                <circle cx="60" cy="60" r="4" fill="#4caf50"/>
+                <circle cx="100" cy="60" r="4" fill="#4caf50"/>
+                <circle cx="140" cy="60" r="4" fill="#4caf50"/>
+                <circle class="drip-dot" cx="60" cy="60" r="3" fill="#2e7d32"/>
+                <circle class="drip-dot drip-dot-2" cx="100" cy="60" r="3" fill="#2e7d32"/>
+                <circle class="drip-dot drip-dot-3" cx="140" cy="60" r="3" fill="#2e7d32"/>
+              </svg>
+            </div>
+            <h4 data-i18n="cmp1_title">Hydrogoal — गोल ठिबक नळी</h4>
+            <p data-i18n="cmp1_desc">मजबूत गोल नळी, 2 / 4 / 8 ltr/hr discharge.</p>
+          </article>
+          <article class="compare-card">
+            <div class="compare-visual">
+              <svg viewBox="0 0 200 120" class="compare-svg" aria-hidden="true">
+                <rect x="10" y="52" width="180" height="16" rx="8" fill="#1f2937"/>
+                <rect x="10" y="52" width="180" height="16" rx="8" fill="none" stroke="#374151" stroke-width="2"/>
+                <circle cx="60" cy="60" r="3" fill="#4caf50"/>
+                <circle cx="100" cy="60" r="3" fill="#4caf50"/>
+                <circle cx="140" cy="60" r="3" fill="#4caf50"/>
+                <circle class="drip-dot" cx="60" cy="60" r="2.5" fill="#2e7d32"/>
+                <circle class="drip-dot drip-dot-2" cx="100" cy="60" r="2.5" fill="#2e7d32"/>
+                <circle class="drip-dot drip-dot-3" cx="140" cy="60" r="2.5" fill="#2e7d32"/>
+              </svg>
+            </div>
+            <h4 data-i18n="cmp2_title">Flat Drip — फ्लॅट ठिबक टेप</h4>
+            <p data-i18n="cmp2_desc">पातळ भिंतीची टेप, 2 / 4 ltr/hr discharge.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -365,23 +434,40 @@
       </div>
     </section>
 
-    <section class="exchange section section-alt" id="exchange">
+    <section class="exchange section" id="exchange">
       <div class="container">
         <div class="exchange-card">
           <div class="exchange-content">
             <span class="exchange-label" data-i18n="exchange_label">खास ऑफर</span>
             <h2 data-i18n="exchange_title">जुनी नळी द्या आणि नवीन नळी घ्या</h2>
-            <p data-i18n="exchange_desc">तुमच्या जुन्या ड्रिप नळी आणा आणि नवीन, गुणवत्तापूर्ण नळी स्वस्त दरात मिळवा. ऊस पिकासाठी विशेष — फिल्टर विरहित, 8 लिटर डिस्चार्ज उपलब्ध.</p>
+            <p data-i18n="exchange_desc">तुमच्या जुन्या ठिबक नळी आणा आणि नवीन, गुणवत्तापूर्ण नळी स्वस्त दरात मिळवा. ऊस पिकासाठी विशेष — फिल्टर विरहित, 8 लिटर डिस्चार्ज उपलब्ध.</p>
             <a href="#contact" class="btn btn-white" data-i18n="exchange_cta">आता संपर्क साधा</a>
           </div>
           <div class="exchange-visual">
-            <img src="assets/hero-banner.png" alt="Pipe exchange offer" class="exchange-img">
+            <div class="illustration illustration-exchange" aria-hidden="true">
+              <svg viewBox="0 0 260 160" class="illu-svg">
+                <g class="ex-old">
+                  <circle cx="60" cy="80" r="40" fill="none" stroke="#5b5b5b" stroke-width="13"/>
+                  <circle cx="60" cy="80" r="22" fill="none" stroke="#4a4a4a" stroke-width="11"/>
+                </g>
+                <g class="ex-arrows">
+                  <path d="M112,66 L150,66" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M142,58 L152,66 L142,74" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M150,96 L112,96" stroke="rgba(255,255,255,0.7)" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M120,88 L110,96 L120,104" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <g class="ex-new">
+                  <circle cx="200" cy="80" r="40" fill="none" stroke="#111" stroke-width="13"/>
+                  <circle cx="200" cy="80" r="22" fill="none" stroke="#2e7d32" stroke-width="6" stroke-dasharray="5 7" class="illu-dash"/>
+                </g>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="contact section" id="contact">
+    <section class="contact section section-alt" id="contact">
       <div class="container">
         <div class="section-header">
           <span class="section-tag" data-i18n="contact_tag">संपर्क</span>
