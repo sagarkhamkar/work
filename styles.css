@@ -782,9 +782,31 @@ ul {
   border: 1px solid var(--gray-200);
   border-radius: var(--radius);
   transition: var(--transition);
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+  cursor: pointer;
 }
 
-a.contact-card:hover {
+button.contact-card {
+  appearance: none;
+}
+
+.contact-mask {
+  font-size: 0.95rem;
+  color: var(--gray-400);
+  font-weight: 500;
+  font-style: italic;
+}
+
+.contact-mask.contact-revealed {
+  color: var(--gray-800);
+  font-style: normal;
+  font-weight: 600;
+}
+
+a.contact-card:hover,
+button.contact-card:hover {
   border-color: var(--red);
   box-shadow: var(--shadow-sm);
   transform: translateX(4px);
@@ -905,6 +927,7 @@ a.contact-card:hover {
   height: 56px;
   background: #25d366;
   color: var(--white);
+  border: none;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -912,6 +935,7 @@ a.contact-card:hover {
   box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
   z-index: 999;
   transition: var(--transition);
+  cursor: pointer;
 }
 
 .whatsapp-float svg {
