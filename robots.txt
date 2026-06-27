@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sagarkhamkar.github.io/work/sitemap.xml
