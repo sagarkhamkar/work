@@ -1253,29 +1253,53 @@ ul {
 }
 
 .compare-card {
-  padding: 1.5rem;
+  position: relative;
+  padding: 1.25rem;
   border-radius: var(--radius-lg);
-  border: 1px solid var(--gray-200);
-  background: linear-gradient(160deg, #ffffff, #f4f7f3);
+  border: 1px solid rgba(46, 125, 50, 0.18);
+  background: linear-gradient(160deg, #ffffff, #f1faee);
   box-shadow: var(--shadow-sm);
+  overflow: hidden;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.compare-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #66bb6a, #2e7d32);
 }
 
 .compare-card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 16px 40px rgba(46, 125, 50, 0.16);
 }
 
 .compare-visual {
-  background: radial-gradient(circle at 50% 40%, rgba(46, 125, 50, 0.08), transparent 60%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem;
+  background: linear-gradient(180deg, #f1faee 0%, #e1f3dd 100%);
+  border: 1px solid rgba(46, 125, 50, 0.14);
   border-radius: var(--radius);
-  margin-bottom: 1rem;
+  margin-bottom: 0.9rem;
 }
 
 .compare-svg {
   width: 100%;
+  max-width: 300px;
   height: auto;
   display: block;
+}
+
+.sprout {
+  transform-box: fill-box;
+  transform-origin: bottom center;
+  animation: rowSway 5s ease-in-out infinite;
 }
 
 .compare-card h4 {
