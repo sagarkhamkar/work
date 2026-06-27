@@ -684,13 +684,13 @@ ul {
 /* Features */
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
 }
 
 .feature-card {
   background: var(--white);
-  padding: 2rem;
+  padding: 1.6rem;
   border-radius: var(--radius-lg);
   border: 1px solid var(--gray-200);
   position: relative;
@@ -1722,6 +1722,10 @@ a.contact-card:hover {
     grid-template-columns: 1fr;
   }
 
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .system-benefits,
   .component-grid,
   .crop-grid,
@@ -1750,6 +1754,10 @@ a.contact-card:hover {
 }
 
 @media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
   .nav-toggle {
     display: flex;
   }
